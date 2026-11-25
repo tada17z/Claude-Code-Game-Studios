@@ -173,3 +173,7 @@ $RECYCLE.BIN/
 # the project root. Anchored so a reports/ folder elsewhere stays tracked.
 /reports/
 /test-results/
+_reference/
+
+# qa-cheats: per-dev config (keystore path, owned prefixes) — not shared
+.claude/skills/qa-cheats/scripts/qa-config.json

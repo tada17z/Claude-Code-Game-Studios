@@ -1,0 +1,14 @@
+{
+  "_comment": "Copy to qa-config.json and fill in. The ownership gate REFUSES to run on any APK whose package does not match ownedPackagePrefixes. An empty list means refuse everything (fail closed), never run-anything.",
+  "ownedPackagePrefixes": [
+    "com.sonat."
+  ],
+  "_ownedCertSha256_comment": "Optional but strongly recommended. Package-prefix match is spoofable (anyone can name a package com.sonat.x). If you list your release/QA cert SHA-256 fingerprints here, the gate also checks the APK is signed by one of them. Get a fingerprint with: keytool -list -printcert -jarfile your.apk , or apksigner verify --print-certs your.apk",
+  "ownedCertSha256": [],
+  "qaKeystore": {
+    "_comment": "The key used to re-sign the QA build. NOT your Play release key. Generate a throwaway QA key once (see references/signing.md). Path is relative to the project root or absolute. Password is read from the QA_KEYSTORE_PASS environment variable, never stored here.",
+    "path": "",
+    "alias": "qa"
+  },
+  "appLabelSuffix": " QA"
+}
